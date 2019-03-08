@@ -35,22 +35,30 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LabelCity = new System.Windows.Forms.Label();
             this.LabelTemp = new System.Windows.Forms.Label();
-            this.PictureWeather = new System.Windows.Forms.PictureBox();
             this.ComboCity = new System.Windows.Forms.ComboBox();
+            this.ListData = new System.Windows.Forms.ListView();
+            this.Temp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.WindSpeed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TempMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TempMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PictureWeather = new System.Windows.Forms.PictureBox();
+            this.LabelWind = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureWeather)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(149)))), ((int)(((byte)(0)))));
             this.MainPanel.Controls.Add(this.ButtonMinimize);
             this.MainPanel.Controls.Add(this.ButtonClose);
             this.MainPanel.Controls.Add(this.label1);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(565, 32);
+            this.MainPanel.Size = new System.Drawing.Size(600, 32);
             this.MainPanel.TabIndex = 0;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
@@ -61,8 +69,8 @@
             this.ButtonMinimize.FlatAppearance.BorderSize = 0;
             this.ButtonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonMinimize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ButtonMinimize.Location = new System.Drawing.Point(497, 0);
+            this.ButtonMinimize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ButtonMinimize.Location = new System.Drawing.Point(532, 0);
             this.ButtonMinimize.Name = "ButtonMinimize";
             this.ButtonMinimize.Size = new System.Drawing.Size(34, 32);
             this.ButtonMinimize.TabIndex = 3;
@@ -75,8 +83,8 @@
             this.ButtonClose.FlatAppearance.BorderSize = 0;
             this.ButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ButtonClose.Location = new System.Drawing.Point(531, 0);
+            this.ButtonClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ButtonClose.Location = new System.Drawing.Point(566, 0);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(34, 32);
             this.ButtonClose.TabIndex = 2;
@@ -88,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(12, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 21);
@@ -97,37 +105,30 @@
             // 
             // LabelCity
             // 
-            this.LabelCity.AutoSize = true;
             this.LabelCity.BackColor = System.Drawing.Color.Transparent;
             this.LabelCity.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.LabelCity.Location = new System.Drawing.Point(61, 92);
+            this.LabelCity.ForeColor = System.Drawing.Color.Black;
+            this.LabelCity.Location = new System.Drawing.Point(12, 53);
+            this.LabelCity.Margin = new System.Windows.Forms.Padding(3);
             this.LabelCity.Name = "LabelCity";
-            this.LabelCity.Size = new System.Drawing.Size(137, 39);
+            this.LabelCity.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LabelCity.Size = new System.Drawing.Size(186, 39);
             this.LabelCity.TabIndex = 4;
             this.LabelCity.Text = "Gdańsk";
+            this.LabelCity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LabelTemp
             // 
-            this.LabelTemp.AutoSize = true;
             this.LabelTemp.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTemp.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelTemp.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.LabelTemp.Location = new System.Drawing.Point(66, 132);
+            this.LabelTemp.Location = new System.Drawing.Point(80, 95);
+            this.LabelTemp.Margin = new System.Windows.Forms.Padding(5);
             this.LabelTemp.Name = "LabelTemp";
-            this.LabelTemp.Size = new System.Drawing.Size(126, 44);
+            this.LabelTemp.Size = new System.Drawing.Size(108, 50);
             this.LabelTemp.TabIndex = 5;
-            this.LabelTemp.Text = "-2.2˚C";
-            // 
-            // PictureWeather
-            // 
-            this.PictureWeather.BackColor = System.Drawing.Color.Transparent;
-            this.PictureWeather.Image = ((System.Drawing.Image)(resources.GetObject("PictureWeather.Image")));
-            this.PictureWeather.Location = new System.Drawing.Point(78, 179);
-            this.PictureWeather.Name = "PictureWeather";
-            this.PictureWeather.Size = new System.Drawing.Size(100, 94);
-            this.PictureWeather.TabIndex = 6;
-            this.PictureWeather.TabStop = false;
+            this.LabelTemp.Text = "2˚C";
+            this.LabelTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ComboCity
             // 
@@ -140,22 +141,100 @@
             "Gdańsk",
             "Warszawa",
             "Olsztyn",
-            "Radom"});
-            this.ComboCity.Location = new System.Drawing.Point(393, 53);
+            "Radom",
+            "Barcelona"});
+            this.ComboCity.Location = new System.Drawing.Point(421, 67);
             this.ComboCity.Name = "ComboCity";
-            this.ComboCity.Size = new System.Drawing.Size(150, 28);
+            this.ComboCity.Size = new System.Drawing.Size(167, 28);
             this.ComboCity.TabIndex = 7;
+            this.ComboCity.SelectedIndexChanged += new System.EventHandler(this.ComboCity_SelectedIndexChanged);
+            // 
+            // ListData
+            // 
+            this.ListData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Temp,
+            this.WindSpeed,
+            this.TempMin,
+            this.TempMax,
+            this.Description});
+            this.ListData.Location = new System.Drawing.Point(212, 119);
+            this.ListData.Name = "ListData";
+            this.ListData.Size = new System.Drawing.Size(376, 219);
+            this.ListData.TabIndex = 9;
+            this.ListData.UseCompatibleStateImageBehavior = false;
+            this.ListData.View = System.Windows.Forms.View.Details;
+            // 
+            // Temp
+            // 
+            this.Temp.Text = "Temp";
+            this.Temp.Width = 50;
+            // 
+            // WindSpeed
+            // 
+            this.WindSpeed.Text = "Wind Speed";
+            this.WindSpeed.Width = 74;
+            // 
+            // TempMin
+            // 
+            this.TempMin.Text = "Temp min";
+            // 
+            // TempMax
+            // 
+            this.TempMax.Text = "Temp max";
+            this.TempMax.Width = 63;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 119;
+            // 
+            // PictureWeather
+            // 
+            this.PictureWeather.BackColor = System.Drawing.Color.Transparent;
+            this.PictureWeather.Image = ((System.Drawing.Image)(resources.GetObject("PictureWeather.Image")));
+            this.PictureWeather.Location = new System.Drawing.Point(21, 90);
+            this.PictureWeather.Name = "PictureWeather";
+            this.PictureWeather.Size = new System.Drawing.Size(60, 60);
+            this.PictureWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureWeather.TabIndex = 6;
+            this.PictureWeather.TabStop = false;
+            // 
+            // LabelWind
+            // 
+            this.LabelWind.BackColor = System.Drawing.Color.Transparent;
+            this.LabelWind.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelWind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.LabelWind.Location = new System.Drawing.Point(40, 146);
+            this.LabelWind.Margin = new System.Windows.Forms.Padding(5);
+            this.LabelWind.Name = "LabelWind";
+            this.LabelWind.Size = new System.Drawing.Size(129, 33);
+            this.LabelWind.TabIndex = 10;
+            this.LabelWind.Text = "2 km/h";
+            this.LabelWind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(44, 284);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(565, 358);
-            this.Controls.Add(this.ComboCity);
-            this.Controls.Add(this.PictureWeather);
+            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LabelWind);
             this.Controls.Add(this.LabelTemp);
+            this.Controls.Add(this.PictureWeather);
             this.Controls.Add(this.LabelCity);
+            this.Controls.Add(this.ListData);
+            this.Controls.Add(this.ComboCity);
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
@@ -165,7 +244,6 @@
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureWeather)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -177,8 +255,16 @@
         private System.Windows.Forms.Button ButtonMinimize;
         private System.Windows.Forms.Label LabelCity;
         private System.Windows.Forms.Label LabelTemp;
-        private System.Windows.Forms.PictureBox PictureWeather;
         private System.Windows.Forms.ComboBox ComboCity;
+        private System.Windows.Forms.ListView ListData;
+        private System.Windows.Forms.ColumnHeader Temp;
+        private System.Windows.Forms.ColumnHeader WindSpeed;
+        private System.Windows.Forms.ColumnHeader TempMax;
+        private System.Windows.Forms.ColumnHeader TempMin;
+        private System.Windows.Forms.ColumnHeader Description;
+        private System.Windows.Forms.PictureBox PictureWeather;
+        private System.Windows.Forms.Label LabelWind;
+        private System.Windows.Forms.Button button1;
     }
 }
 

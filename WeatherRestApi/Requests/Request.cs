@@ -9,6 +9,7 @@ namespace WeatherRestApi
         {
             var client = new RestClient(url);
             var response = client.Execute(new RestRequest());
+
             return response.Content;
         }
     }
