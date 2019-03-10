@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-using RestSharp;
-using System;
+﻿using System;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 using WeatherRestApi;
+using WeatherRestApi.ThreeDayWeather;
 
 namespace UserInterface
 {
@@ -24,7 +22,7 @@ namespace UserInterface
         /////////////////////////////////
         #region CurrentWeather
 
-        CurrentWeatherData data;
+        CurrentWeatherData currentData;
 
         private void GetCurrentWeather()
         {
@@ -33,30 +31,60 @@ namespace UserInterface
                 + ComboCity.Text
                 + "&units=metric&APPID=ea476663b316d6c0007c1bcce2703954";
 
-            data = GetWeatherData.GetCurrentWeatherData(weather_request);
+            currentData = GetWeatherData.GetCurrentWeatherData(weather_request);
         }
         
         private void ShowCurrentWeather()
         {
-            LabelTemp.Text = (Math.Round(data.main.temp, 0)) + "˚C";
-            LabelCity.Text = data.name;
-            LabelWind.Text = ConvertClass.MPerSecToKmPerHour(data.wind.speed) + "km/h";
-
+            LabelTemp.Text = (Math.Round(currentData.main.temp, 0)) + "˚C";
+            LabelCity.Text = currentData.name;
+            LabelWind.Text = ConvertClass.MPerSecToKmPerHour(currentData.wind.speed) + "km/h";
         }
 
         private void ShowImage()
         {
-            string iconUrl = WeatherIcons.GetCurrentIcon(data.weather[0].icon);
+            string iconUrl = WeatherIcons.GetCurrentIcon(currentData.weather[0].icon);
             PictureWeather.ImageLocation = iconUrl;
+        }
+
+
+        /////////////////////////////////
+        //      Three Day Weather      //
+        /////////////////////////////////
+
+        ThreeDayWeatherData threeDayData;
+
+        private void GetThreeDayWeather()
+        {
+            string weather_request =
+                "http://api.openweathermap.org/data/2.5/forecast?q="
+                + ComboCity.Text
+                + "&mode=json&units=metric&APPID=ea476663b316d6c0007c1bcce2703954";
+
+            threeDayData = GetWeatherData.GetThreeDayWeatherData(weather_request);
+        }
+
+        private void FillData()
+        {
+
         }
 
         private void FillListView()
         {
-            ListData.Items.Add(new ListViewItem(new[] { "1", "2", "3", "4", "5" }));
-            ListData.Items.Add(new ListViewItem(new[] { "1", "2", "3", "4", "5" }));
-            ListData.Items.Add(new ListViewItem(new[] { "1", "2", "3", "4", "5" }));
-            ListData.Items.Add(new ListViewItem(new[] { "1", "2", "3", "4", "5" }));
+            foreach (var i in threeDayData.list)
+            {
+                ListData.Items.Add(new ListViewItem(new[] {
+                    i.dt_txt,
+                    i.main.temp.ToString(),
+                    i.wind.speed.ToString(),
+                    i.main.pressure.ToString(),
+                    i.weather[0].description}));
+            }
 
+            //for (int i = 0; i < threeDayData.list.Count; i++)
+            //{
+            //    ListData.Items.Add(new ListViewItem(new[] { i.dt_txt, "2", "3", "4", "5" }));
+            //}
         }
         #endregion
 
@@ -144,6 +172,7 @@ namespace UserInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            GetThreeDayWeather();
             FillListView();
         }
     }

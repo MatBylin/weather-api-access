@@ -37,9 +37,9 @@
             this.LabelTemp = new System.Windows.Forms.Label();
             this.ComboCity = new System.Windows.Forms.ComboBox();
             this.ListData = new System.Windows.Forms.ListView();
+            this.Dt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Temp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.WindSpeed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TempMin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Wind = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TempMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PictureWeather = new System.Windows.Forms.PictureBox();
@@ -58,7 +58,7 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(600, 32);
+            this.MainPanel.Size = new System.Drawing.Size(678, 32);
             this.MainPanel.TabIndex = 0;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
@@ -70,7 +70,7 @@
             this.ButtonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonMinimize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ButtonMinimize.Location = new System.Drawing.Point(532, 0);
+            this.ButtonMinimize.Location = new System.Drawing.Point(610, 0);
             this.ButtonMinimize.Name = "ButtonMinimize";
             this.ButtonMinimize.Size = new System.Drawing.Size(34, 32);
             this.ButtonMinimize.TabIndex = 3;
@@ -84,7 +84,7 @@
             this.ButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ButtonClose.Location = new System.Drawing.Point(566, 0);
+            this.ButtonClose.Location = new System.Drawing.Point(644, 0);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(34, 32);
             this.ButtonClose.TabIndex = 2;
@@ -143,50 +143,51 @@
             "Olsztyn",
             "Radom",
             "Barcelona"});
-            this.ComboCity.Location = new System.Drawing.Point(421, 67);
+            this.ComboCity.Location = new System.Drawing.Point(479, 64);
             this.ComboCity.Name = "ComboCity";
-            this.ComboCity.Size = new System.Drawing.Size(167, 28);
+            this.ComboCity.Size = new System.Drawing.Size(187, 28);
             this.ComboCity.TabIndex = 7;
             this.ComboCity.SelectedIndexChanged += new System.EventHandler(this.ComboCity_SelectedIndexChanged);
             // 
             // ListData
             // 
             this.ListData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Dt,
             this.Temp,
-            this.WindSpeed,
-            this.TempMin,
+            this.Wind,
             this.TempMax,
             this.Description});
             this.ListData.Location = new System.Drawing.Point(212, 119);
             this.ListData.Name = "ListData";
-            this.ListData.Size = new System.Drawing.Size(376, 219);
+            this.ListData.Size = new System.Drawing.Size(454, 219);
             this.ListData.TabIndex = 9;
             this.ListData.UseCompatibleStateImageBehavior = false;
             this.ListData.View = System.Windows.Forms.View.Details;
             // 
+            // Dt
+            // 
+            this.Dt.Text = "Date / Time:";
+            this.Dt.Width = 112;
+            // 
             // Temp
             // 
-            this.Temp.Text = "Temp";
-            this.Temp.Width = 50;
+            this.Temp.Text = "Temp (˚C):";
+            this.Temp.Width = 64;
             // 
-            // WindSpeed
+            // Wind
             // 
-            this.WindSpeed.Text = "Wind Speed";
-            this.WindSpeed.Width = 74;
-            // 
-            // TempMin
-            // 
-            this.TempMin.Text = "Temp min";
+            this.Wind.Text = "Wind (m/s):";
+            this.Wind.Width = 67;
             // 
             // TempMax
             // 
-            this.TempMax.Text = "Temp max";
-            this.TempMax.Width = 63;
+            this.TempMax.Text = "Pressure (hPa):";
+            this.TempMax.Width = 86;
             // 
             // Description
             // 
-            this.Description.Text = "Description";
-            this.Description.Width = 119;
+            this.Description.Text = "Description :";
+            this.Description.Width = 121;
             // 
             // PictureWeather
             // 
@@ -227,7 +228,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(678, 350);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LabelWind);
             this.Controls.Add(this.LabelTemp);
@@ -257,10 +258,10 @@
         private System.Windows.Forms.Label LabelTemp;
         private System.Windows.Forms.ComboBox ComboCity;
         private System.Windows.Forms.ListView ListData;
+        private System.Windows.Forms.ColumnHeader Dt;
         private System.Windows.Forms.ColumnHeader Temp;
-        private System.Windows.Forms.ColumnHeader WindSpeed;
         private System.Windows.Forms.ColumnHeader TempMax;
-        private System.Windows.Forms.ColumnHeader TempMin;
+        private System.Windows.Forms.ColumnHeader Wind;
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.PictureBox PictureWeather;
         private System.Windows.Forms.Label LabelWind;
