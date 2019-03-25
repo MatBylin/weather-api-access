@@ -54,7 +54,7 @@
     <Compile Include="Requests\Request.cs" />
     <Compile Include="WeatherData\GetWeatherData.cs" />
     <Compile Include="Helper\WeatherIcons.cs" />
-    <Compile Include="ThreeDayWeather\ThreeDayWeatherData.cs" />
+    <Compile Include="FiveDayWeather\FiveDayWeatherData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

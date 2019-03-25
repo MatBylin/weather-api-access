@@ -44,7 +44,6 @@
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PictureWeather = new System.Windows.Forms.PictureBox();
             this.LabelWind = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureWeather)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +57,7 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(678, 32);
+            this.MainPanel.Size = new System.Drawing.Size(700, 32);
             this.MainPanel.TabIndex = 0;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
@@ -70,7 +69,7 @@
             this.ButtonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonMinimize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ButtonMinimize.Location = new System.Drawing.Point(610, 0);
+            this.ButtonMinimize.Location = new System.Drawing.Point(632, 0);
             this.ButtonMinimize.Name = "ButtonMinimize";
             this.ButtonMinimize.Size = new System.Drawing.Size(34, 32);
             this.ButtonMinimize.TabIndex = 3;
@@ -84,7 +83,7 @@
             this.ButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ButtonClose.Location = new System.Drawing.Point(644, 0);
+            this.ButtonClose.Location = new System.Drawing.Point(666, 0);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(34, 32);
             this.ButtonClose.TabIndex = 2;
@@ -122,7 +121,7 @@
             this.LabelTemp.BackColor = System.Drawing.Color.Transparent;
             this.LabelTemp.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.LabelTemp.Location = new System.Drawing.Point(80, 95);
+            this.LabelTemp.Location = new System.Drawing.Point(79, 95);
             this.LabelTemp.Margin = new System.Windows.Forms.Padding(5);
             this.LabelTemp.Name = "LabelTemp";
             this.LabelTemp.Size = new System.Drawing.Size(108, 50);
@@ -159,7 +158,7 @@
             this.Description});
             this.ListData.Location = new System.Drawing.Point(212, 119);
             this.ListData.Name = "ListData";
-            this.ListData.Size = new System.Drawing.Size(454, 219);
+            this.ListData.Size = new System.Drawing.Size(476, 219);
             this.ListData.TabIndex = 9;
             this.ListData.UseCompatibleStateImageBehavior = false;
             this.ListData.View = System.Windows.Forms.View.Details;
@@ -167,33 +166,33 @@
             // Dt
             // 
             this.Dt.Text = "Date / Time:";
-            this.Dt.Width = 112;
+            this.Dt.Width = 123;
             // 
             // Temp
             // 
             this.Temp.Text = "Temp (˚C):";
-            this.Temp.Width = 64;
+            this.Temp.Width = 67;
             // 
             // Wind
             // 
             this.Wind.Text = "Wind (m/s):";
-            this.Wind.Width = 67;
+            this.Wind.Width = 70;
             // 
             // TempMax
             // 
             this.TempMax.Text = "Pressure (hPa):";
-            this.TempMax.Width = 86;
+            this.TempMax.Width = 91;
             // 
             // Description
             // 
             this.Description.Text = "Description :";
-            this.Description.Width = 121;
+            this.Description.Width = 103;
             // 
             // PictureWeather
             // 
             this.PictureWeather.BackColor = System.Drawing.Color.Transparent;
             this.PictureWeather.Image = ((System.Drawing.Image)(resources.GetObject("PictureWeather.Image")));
-            this.PictureWeather.Location = new System.Drawing.Point(21, 90);
+            this.PictureWeather.Location = new System.Drawing.Point(22, 90);
             this.PictureWeather.Name = "PictureWeather";
             this.PictureWeather.Size = new System.Drawing.Size(60, 60);
             this.PictureWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -213,23 +212,12 @@
             this.LabelWind.Text = "2 km/h";
             this.LabelWind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(44, 284);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(678, 350);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(700, 350);
             this.Controls.Add(this.LabelWind);
             this.Controls.Add(this.LabelTemp);
             this.Controls.Add(this.PictureWeather);
@@ -265,7 +253,6 @@
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.PictureBox PictureWeather;
         private System.Windows.Forms.Label LabelWind;
-        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using WeatherRestApi;
-using WeatherRestApi.ThreeDayWeather;
+using WeatherRestApi.FiveDayWeather;
 
 namespace UserInterface
 {
@@ -12,9 +12,9 @@ namespace UserInterface
         {
             InitializeComponent();
             InitializeFields();
-            GetCurrentWeather();
-            ShowCurrentWeather();
-            ShowImage();
+            //GetCurrentWeather();
+            //ShowCurrentWeather();
+            //ShowImage();
         }
 
         /////////////////////////////////
@@ -46,13 +46,13 @@ namespace UserInterface
             string iconUrl = WeatherIcons.GetCurrentIcon(currentData.weather[0].icon);
             PictureWeather.ImageLocation = iconUrl;
         }
-
+        #endregion
 
         /////////////////////////////////
-        //      Three Day Weather      //
+        //      Five  Day Weather      //
         /////////////////////////////////
-
-        ThreeDayWeatherData threeDayData;
+        #region FiveDayWeather
+        FiveDayWeatherData fiveDayData;
 
         private void GetThreeDayWeather()
         {
@@ -61,17 +61,12 @@ namespace UserInterface
                 + ComboCity.Text
                 + "&mode=json&units=metric&APPID=ea476663b316d6c0007c1bcce2703954";
 
-            threeDayData = GetWeatherData.GetThreeDayWeatherData(weather_request);
-        }
-
-        private void FillData()
-        {
-
+            fiveDayData = GetWeatherData.GetFiveDayWeatherData(weather_request);
         }
 
         private void FillListView()
         {
-            foreach (var i in threeDayData.list)
+            foreach (var i in fiveDayData.list)
             {
                 ListData.Items.Add(new ListViewItem(new[] {
                     i.dt_txt,
@@ -80,11 +75,11 @@ namespace UserInterface
                     i.main.pressure.ToString(),
                     i.weather[0].description}));
             }
+        }
 
-            //for (int i = 0; i < threeDayData.list.Count; i++)
-            //{
-            //    ListData.Items.Add(new ListViewItem(new[] { i.dt_txt, "2", "3", "4", "5" }));
-            //}
+        private void ClearListView()
+        {
+            ListData.Items.Clear();
         }
         #endregion
 
@@ -135,14 +130,18 @@ namespace UserInterface
         }
         #endregion
 
+        //////////////////////////////////
+        //  Main ComboBox with Cities   //
+        //////////////////////////////////
         private void ComboCity_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetCurrentWeather();
             ShowCurrentWeather();
             ShowImage();
+            GetThreeDayWeather();
+            ClearListView();
+            FillListView();
         }
-
-
         #region comments
         //public PointF WorldToTilePos(double lon, double lat, int zoom)
         //{
@@ -169,11 +168,5 @@ namespace UserInterface
         //    PictureMap.ImageLocation = map_request;
         //}
         #endregion
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            GetThreeDayWeather();
-            FillListView();
-        }
     }
 }

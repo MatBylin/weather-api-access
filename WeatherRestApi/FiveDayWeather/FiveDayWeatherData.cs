@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WeatherRestApi.ThreeDayWeather
+namespace WeatherRestApi.FiveDayWeather
 {
     // http://json2csharp.com/ generate classes from json
 
@@ -79,7 +79,7 @@ namespace WeatherRestApi.ThreeDayWeather
         public int population { get; set; }
     }
 
-    public class ThreeDayWeatherData
+    public class FiveDayWeatherData
     {
         public string cod { get; set; }
         public double message { get; set; }

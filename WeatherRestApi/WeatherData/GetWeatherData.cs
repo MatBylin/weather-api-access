@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using WeatherRestApi.ThreeDayWeather;
+using WeatherRestApi.FiveDayWeather;
 
 namespace WeatherRestApi
 {
@@ -13,10 +13,10 @@ namespace WeatherRestApi
             return data;
         }
 
-        public static ThreeDayWeatherData GetThreeDayWeatherData(string weather_request)
+        public static FiveDayWeatherData GetFiveDayWeatherData(string weather_request)
         {
             string result = WeatherRestApi.Request.GetResponse(weather_request);
-            ThreeDayWeatherData data = JsonConvert.DeserializeObject<ThreeDayWeatherData>(result);
+            FiveDayWeatherData data = JsonConvert.DeserializeObject<FiveDayWeatherData>(result);
 
             return data;
         }
