@@ -137,11 +137,22 @@
             this.ComboCity.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ComboCity.FormattingEnabled = true;
             this.ComboCity.Items.AddRange(new object[] {
+            "Białystok",
+            "Bydgoszcz",
             "Gdańsk",
-            "Warszawa",
+            "Gorzów Wielkopolski",
+            "Katowice",
+            "Kielce",
+            "Lublin",
+            "Łódź",
             "Olsztyn",
-            "Radom",
-            "Barcelona"});
+            "Opole",
+            "Poznań",
+            "Rzeszów",
+            "Szczecin",
+            "Toruń",
+            "Warszawa",
+            "Wrocław"});
             this.ComboCity.Location = new System.Drawing.Point(479, 64);
             this.ComboCity.Name = "ComboCity";
             this.ComboCity.Size = new System.Drawing.Size(187, 28);
