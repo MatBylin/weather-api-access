@@ -107,11 +107,11 @@
             this.LabelCity.BackColor = System.Drawing.Color.Transparent;
             this.LabelCity.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelCity.ForeColor = System.Drawing.Color.Black;
-            this.LabelCity.Location = new System.Drawing.Point(12, 53);
+            this.LabelCity.Location = new System.Drawing.Point(0, 53);
             this.LabelCity.Margin = new System.Windows.Forms.Padding(3);
             this.LabelCity.Name = "LabelCity";
             this.LabelCity.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LabelCity.Size = new System.Drawing.Size(186, 39);
+            this.LabelCity.Size = new System.Drawing.Size(204, 39);
             this.LabelCity.TabIndex = 4;
             this.LabelCity.Text = "Gdańsk";
             this.LabelCity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,7 +121,7 @@
             this.LabelTemp.BackColor = System.Drawing.Color.Transparent;
             this.LabelTemp.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.LabelTemp.Location = new System.Drawing.Point(79, 95);
+            this.LabelTemp.Location = new System.Drawing.Point(83, 95);
             this.LabelTemp.Margin = new System.Windows.Forms.Padding(5);
             this.LabelTemp.Name = "LabelTemp";
             this.LabelTemp.Size = new System.Drawing.Size(108, 50);
@@ -152,10 +152,11 @@
             "Szczecin",
             "Toruń",
             "Warszawa",
-            "Wrocław"});
+            "Wrocław",
+            "Barcelona"});
             this.ComboCity.Location = new System.Drawing.Point(479, 64);
             this.ComboCity.Name = "ComboCity";
-            this.ComboCity.Size = new System.Drawing.Size(187, 28);
+            this.ComboCity.Size = new System.Drawing.Size(209, 28);
             this.ComboCity.TabIndex = 7;
             this.ComboCity.SelectedIndexChanged += new System.EventHandler(this.ComboCity_SelectedIndexChanged);
             // 
@@ -203,7 +204,7 @@
             // 
             this.PictureWeather.BackColor = System.Drawing.Color.Transparent;
             this.PictureWeather.Image = ((System.Drawing.Image)(resources.GetObject("PictureWeather.Image")));
-            this.PictureWeather.Location = new System.Drawing.Point(22, 90);
+            this.PictureWeather.Location = new System.Drawing.Point(23, 90);
             this.PictureWeather.Name = "PictureWeather";
             this.PictureWeather.Size = new System.Drawing.Size(60, 60);
             this.PictureWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,7 +216,7 @@
             this.LabelWind.BackColor = System.Drawing.Color.Transparent;
             this.LabelWind.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelWind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.LabelWind.Location = new System.Drawing.Point(40, 146);
+            this.LabelWind.Location = new System.Drawing.Point(40, 147);
             this.LabelWind.Margin = new System.Windows.Forms.Padding(5);
             this.LabelWind.Name = "LabelWind";
             this.LabelWind.Size = new System.Drawing.Size(129, 33);

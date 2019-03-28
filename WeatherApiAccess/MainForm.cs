@@ -12,9 +12,6 @@ namespace UserInterface
         {
             InitializeComponent();
             InitializeFields();
-            //GetCurrentWeather();
-            //ShowCurrentWeather();
-            //ShowImage();
         }
 
         /////////////////////////////////
@@ -70,9 +67,9 @@ namespace UserInterface
             {
                 ListData.Items.Add(new ListViewItem(new[] {
                     i.dt_txt,
-                    i.main.temp.ToString(),
-                    i.wind.speed.ToString(),
-                    i.main.pressure.ToString(),
+                    i.main.temp.ToString("0.0"),
+                    i.wind.speed.ToString("0.0"),
+                    i.main.pressure.ToString("0.0"),
                     i.weather[0].description}));
             }
         }
@@ -135,12 +132,20 @@ namespace UserInterface
         //////////////////////////////////
         private void ComboCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetCurrentWeather();
-            ShowCurrentWeather();
-            ShowImage();
-            GetThreeDayWeather();
-            ClearListView();
-            FillListView();
+            try
+            {
+                GetCurrentWeather();
+                ShowCurrentWeather();
+                ShowImage();
+                GetThreeDayWeather();
+                ClearListView();
+                FillListView();
+            }
+            catch
+            {
+                MessageBox.Show("Nastąpił niespodziewany wyjątek aplikacji!", "Błąd");
+            }
+            
         }
         #region comments
         //public PointF WorldToTilePos(double lon, double lat, int zoom)
