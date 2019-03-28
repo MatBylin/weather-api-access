@@ -143,7 +143,7 @@ namespace UserInterface
             }
             catch
             {
-                MessageBox.Show("Nastąpił niespodziewany wyjątek aplikacji!", "Błąd");
+                MessageBox.Show("Nastąpił niespodziewany wyjątek aplikacji! \nSprawdź połączenie z internetem lub ustawienia firewalla.", "Błąd");
             }
             
         }
